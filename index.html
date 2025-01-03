@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Changer Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reset-container">
+        <button id="reset-button">Reset</button>
+    </div>
+    <div class="container">
+        <h1>CSS Live Editor</h1>
+        <span class="heading">Change and Generate the CSS of the Image with Sliders</span>
+
+        <div class="content">
+           
+            <div class="css-controller">
+
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="base">Base Color:</label>
+                        <p id="base-description">Changes the background color of the image.</p>
+                        <input type="color" name="base" id="base" value="#FF8500">
+                    </div>
+                    
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="width">Width:</label>
+                        <p id="width-description">Changes the width of the image as a percentage of its original size.</p>
+                    </div>
+                    <input type="range" id="width" name="width" min="0" max="100" value="50" data-sizing="%">
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="border-radius">Border-Radius:</label>
+                        <p id="border-radius-description">Rounds the corners of the image.</p>
+                    </div>
+                    <input type="range" id="border-radius" name="border-radius" min="0" max="100" value="15" data-sizing="px">
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="padding">Padding:</label>
+                        <p id="padding-description">Adjusts the space between the image content and its border.</p>
+                    </div>
+                    <input type="range" id="padding" name="padding" min="0" max="100" value="20" data-sizing="px">
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="blur">Blur:</label>
+                        <p id="blur-description">Applies a blur effect to the image.</p>
+                    </div>
+                    <input type="range" id="blur" name="blur" min="0" max="25" value="0" data-sizing="px">
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="position-top">Top:</label>
+                        <p id="position-top-description">Moves the image down from the top of its container.</p>
+                    </div>
+                    <input type="range" id="position-top" name="position-top" min="-115" max="250" value="0" data-sizing="px">
+                </div>
+            
+                <div class="control-group">
+                    <div class="label-description">
+                        <label for="position-left">Left:</label>
+                        <p id="position-left-description">Moves the image to the right from the left of its container.</p>
+                    </div>
+                    <input type="range" id="position-left" name="position-left" min="-600" max="230" value="0" data-sizing="px">
+                </div>
+            
+            </div>
+            
+            
+
+            <img src="https://cdn.pixabay.com/photo/2023/08/26/22/44/brewers-blackbird-8215850_640.jpg" alt="Image from Pixabay">
+
+        </div>
+
+        <h3>Generated CSS:</h3>
+        <button id="copyButton">Copy</button>
+        <pre id="css-output">
+        </pre>
+        
+    </div>
+
+    <script src="scrip.js"></script>
+</body>
+</html>

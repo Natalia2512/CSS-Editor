@@ -1,0 +1,266 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --padding: 20px;
+    --blur: 0px;
+    --base:#FF8500;
+    --width: 50%;
+    --border-radius: 15px;
+    --position-top: 0px;
+    --position-left: 80px;
+    
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #1d2b64, #61045f);
+    box-shadow: 10px 10px 10px rgba(246, 178, 172, 0.2), -10px -10px 30px rgba(255, 107, 107, 0.8);
+}
+
+h1 {
+    font-size: 2rem;
+    color:rgb(255, 133, 0) ;
+    margin-bottom: 0.2rem;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+.heading {
+    font-size: 1.5rem;
+    color:#f6f6f6 ;
+   
+}
+.reset-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#reset-button {
+    background-color:#1d2b64 ;
+    color: #FF8500;
+    font-weight: 600;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #1a265a;
+}
+
+
+
+.content {
+    display: flex;
+    align-items: center; /* Center image vertically */
+    justify-content: space-between;
+    width: 85%; /* Adjust width for better spacing */
+    margin-top: 60px;
+}
+
+.css-controller {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+    width: auto; /* Make room for the image to shift more right */
+}
+
+label {
+    padding-left: 0rem;
+    font-size: 1rem;
+    color: #FF8500;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #f6f6f6;
+    padding-top: 10px;
+}
+.control-group {
+    display: flex;
+    flex-direction: column; /* Stack label+description and input vertically */
+    padding-bottom: 12px;
+}
+
+.label-description {
+    display: flex;
+    align-items: center; /* Align label and description vertically */
+    gap: 10px; /* Space between label and description */
+    margin-bottom: 5px; /* Space below before input */
+}
+
+.label-description label {
+    font-size: 1rem;
+    color: #FF8500;
+    font-weight: 600;
+    min-width: 120px; /* Consistent label width */
+    white-space: nowrap;
+}
+
+.label-description p {
+    font-size: 0.9rem;
+    color: #f6f6f6;
+    margin: 0;
+    flex-grow: 1; /* Allows the description to grow */
+    white-space: nowrap;
+}
+
+.control-group input[type="range"] {
+    width: 300px; /* Fixed width */
+    max-width: 300px;
+    
+    
+}
+
+
+.control-group input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+/* General Range Slider Styles */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling for Webkit browsers */
+    appearance: none;
+    width: 300px; /* Fixed width */
+    height: 8px; /* Track thickness */
+    background: #ddd; /* Track background */
+    border-radius: 5px; /* Rounded edges for the track */
+    outline: none; /* Remove default focus outline */
+    transition: background 0.3s ease;
+}
+
+/* Track Hover Effect */
+input[type="range"]:hover {
+    background: #ccc;
+}
+
+/* Custom Thumb (Handle) for Webkit Browsers */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default thumb styling */
+    appearance: none;
+    width: 20px; /* Thumb size */
+    height: 20px;
+    background: #FF8500; /* Thumb color */
+    border-radius: 50%; /* Make it round */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+/* Thumb Hover Effect */
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #e07600; /* Darker orange on hover */
+}
+
+/* Custom Thumb for Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #FF8500;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumb Hover Effect for Firefox */
+input[type="range"]::-moz-range-thumb:hover {
+    background: #e07600;
+}
+
+/* Active State (When dragging the thumb) */
+input[type="range"]:active::-webkit-slider-thumb {
+    background: #d86900;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+    background: #d86900;
+}
+
+
+img {
+    width: var(--width);
+    margin-top: 1rem;
+    padding: var(--padding);
+    filter: blur(var(--blur));
+    background-color: var(--base);
+    border-radius: var(--border-radius);
+    position: relative;
+    top: var(--position-top);
+    left: var(--position-left);
+    transition: filter 0.3s ease, background-color 0.3s ease;
+}
+
+pre {
+    background: #ddd;
+    color: #1d2b64;
+    font-weight: 550;
+    padding: 10px;
+    margin-top: 1rem;
+    text-align: left;
+    overflow-x: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+input[type="color"] {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border-style: transparent;
+    background-color: var(--base);
+    cursor: pointer;
+}
+
+.css-controller input[type="range"] {
+    width: 100%;
+}
+
+h3 {
+    color: #FF8500;
+    margin-top: 2.5rem;
+}
+
+#copyButton {
+    position: absolute;
+    right: 100px;
+    background-color: #1d2b64;
+    color: #d86900 ;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#copyButton:hover {
+    background-color: #1a265a;
+}
